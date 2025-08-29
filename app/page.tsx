@@ -53,8 +53,42 @@ export default function HomePage() {
     );
   };
 
+  const services = [
+    {
+      title: "Website Development",
+      description: "Custom websites and web applications",
+      icon: Globe,
+    },
+    {
+      title: "Mobile App Development",
+      description: "iOS and Android applications",
+      icon: Smartphone,
+    },
+    {
+      title: "DevOps & Cloud Solutions",
+      description: "Scalable cloud infrastructure",
+      icon: Sparkles,
+    },
+    {
+      title: "AI & Machine Learning",
+      description: "Intelligent automation solutions",
+      icon: Code,
+    },
+    {
+      title: "Digital Marketing",
+      description: "Growth-focused marketing strategies",
+      icon: Zap,
+    },
+    {
+      title: "Cybersecurity Services",
+      description: "Comprehensive security solutions",
+      icon: Shield,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero Section */}
       <section
         ref={heroRef}
         className="relative py-32 px-6 hero-section-3d overflow-hidden"
@@ -62,24 +96,12 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <div className="hero-3d-sphere"></div>
           <div className="hero-particles">
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot"></div>
-            <div className="particle-dot-white"></div>
-            <div className="particle-dot-white"></div>
-            <div className="particle-dot-white"></div>
-            <div className="particle-dot-white"></div>
-            <div className="particle-dot-white"></div>
-            <div className="particle-dot-white"></div>
+            {[...Array(12)].map((_, i) => (
+              <div key={i} className="particle-dot"></div>
+            ))}
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="particle-dot-white"></div>
+            ))}
           </div>
           <div className="hero-gradient-bg"></div>
         </div>
@@ -116,6 +138,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services Section */}
       <section
         ref={servicesRef}
         className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white"
@@ -132,38 +155,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Website Development",
-                description: "Custom websites and web applications",
-                icon: Globe,
-              },
-              {
-                title: "Mobile App Development",
-                description: "iOS and Android applications",
-                icon: Smartphone,
-              },
-              {
-                title: "DevOps & Cloud Solutions",
-                description: "Scalable cloud infrastructure",
-                icon: Sparkles,
-              },
-              {
-                title: "AI & Machine Learning",
-                description: "Intelligent automation solutions",
-                icon: Code,
-              },
-              {
-                title: "Digital Marketing",
-                description: "Growth-focused marketing strategies",
-                icon: Zap,
-              },
-              {
-                title: "Cybersecurity Services",
-                description: "Comprehensive security solutions",
-                icon: Shield,
-              },
-            ].map((service, index) => {
+            {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <div
@@ -283,7 +275,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ready to Start Your Project Section */}
+      {/* Ready to Start Project */}
       <section className="py-24 px-6 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-4xl mx-auto text-center animate-on-scroll fade-up">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8">
@@ -307,7 +299,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Founders Section */}
+      {/* Founders */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-16 animate-on-scroll fade-up">
@@ -315,85 +307,69 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d">
-              <div className="founder-name-container">
-                <h3 className="text-4xl font-light text-gray-900 mb-3 founder-name-enhanced">
-                  M. Mazhar Yousaf
-                </h3>
-                <div className="founder-title-line"></div>
-                <p className="text-blue-600 font-light text-xl mt-3">
-                  CEO (Chief Executive Officer)
-                </p>
-              </div>
+              <h3 className="text-4xl font-light text-gray-900 mb-3">
+                M. Mazhar Yousaf
+              </h3>
+              <div className="founder-title-line"></div>
+              <p className="text-blue-600 font-light text-xl mt-3">
+                CEO (Chief Executive Officer)
+              </p>
             </div>
-
             <div
               className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d"
               style={{ animationDelay: "200ms" }}
             >
-              <div className="founder-name-container">
-                <h3 className="text-4xl font-light text-gray-900 mb-3 founder-name-enhanced">
-                  Jawad Ahmad
-                </h3>
-                <div className="founder-title-line"></div>
-                <p className="text-blue-600 font-light text-xl mt-3">
-                  Managing Director
-                </p>
-              </div>
+              <h3 className="text-4xl font-light text-gray-900 mb-3">
+                Jawad Ahmad
+              </h3>
+              <div className="founder-title-line"></div>
+              <p className="text-blue-600 font-light text-xl mt-3">
+                Managing Director
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Co-Founders Section */}
+      {/* Co-Founders */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-16 animate-on-scroll fade-up">
             Co-Founders
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Founder 1 */}
             <div className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d">
-              <div className="founder-name-container">
-                <h3 className="text-4xl font-light text-gray-900 mb-3 founder-name-enhanced">
-                  Hussain Ali
-                </h3>
-                <div className="founder-title-line"></div>
-                <p className="text-blue-600 font-light text-xl mt-3">
-                  (CTO) Chief Technology Officer
-                </p>
-              </div>
+              <h3 className="text-4xl font-light text-gray-900 mb-3">
+                Hussain Ali
+              </h3>
+              <div className="founder-title-line"></div>
+              <p className="text-blue-600 font-light text-xl mt-3">
+                (CTO) Chief Technology Officer
+              </p>
             </div>
-
-            {/* Founder 2 */}
             <div
               className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d"
               style={{ animationDelay: "200ms" }}
             >
-              <div className="founder-name-container">
-                <h3 className="text-4xl font-light text-gray-900 mb-3 founder-name-enhanced">
-                  M. Shahid Farooq
-                </h3>
-                <div className="founder-title-line"></div>
-                <p className="text-blue-600 font-light text-xl mt-3">
-                  (CMO) Chief Marketing Officer
-                </p>
-              </div>
+              <h3 className="text-4xl font-light text-gray-900 mb-3">
+                M. Shahid Farooq
+              </h3>
+              <div className="founder-title-line"></div>
+              <p className="text-blue-600 font-light text-xl mt-3">
+                (CMO) Chief Marketing Officer
+              </p>
             </div>
-
-            {/* Founder 3 - New */}
             <div
               className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d"
               style={{ animationDelay: "400ms" }}
             >
-              <div className="founder-name-container">
-                <h3 className="text-4xl font-light text-gray-900 mb-3 founder-name-enhanced">
-                  Hussain Anwar
-                </h3>
-                <div className="founder-title-line"></div>
-                <p className="text-blue-600 font-light text-xl mt-3">
-                  (COO) Chief Operation Officer
-                </p>
-              </div>
+              <h3 className="text-4xl font-light text-gray-900 mb-3">
+                Hussain Anwar
+              </h3>
+              <div className="founder-title-line"></div>
+              <p className="text-blue-600 font-light text-xl mt-3">
+                (COO) Chief Operation Officer
+              </p>
             </div>
           </div>
         </div>

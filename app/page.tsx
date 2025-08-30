@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,46 +9,30 @@ import {
   Smartphone,
   Shield,
 } from "lucide-react";
-import { useEffect, useRef } from "react";
 
 export default function HomePage() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const handleGetInTouch = () => {
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
-    );
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
+      );
+    }
   };
 
   const handleScheduleMeeting = () => {
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
-    );
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
+      );
+    }
   };
 
   const handleContactUsToday = () => {
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
-    );
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
+      );
+    }
   };
 
   const services = [
@@ -89,10 +71,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative py-32 px-6 hero-section-3d overflow-hidden"
-      >
+      <section className="relative py-32 px-6 hero-section-3d overflow-hidden">
         <div className="absolute inset-0">
           <div className="hero-3d-sphere"></div>
           <div className="hero-particles">
@@ -139,10 +118,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section
-        ref={servicesRef}
-        className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white"
-      >
+      <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll fade-up">
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
@@ -207,17 +183,21 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  onClick={() =>
-                    window.open("https://www.pakprintwishes.com", "_blank")
-                  }
+                  onClick={() => {
+                    if (typeof window !== "undefined") {
+                      window.open("https://www.pakprintwishes.com", "_blank");
+                    }
+                  }}
                   className="bg-blue-600 hover:bg-blue-700 text-white font-light px-6 py-3 h-auto button-glow-royal hover-lift-3d"
                 >
                   Visit PakPrint Wishes
                 </Button>
                 <Button
-                  onClick={() =>
-                    window.open("https://www.pakprintwishes.com", "_blank")
-                  }
+                  onClick={() => {
+                    if (typeof window !== "undefined") {
+                      window.open("https://www.pakprintwishes.com", "_blank");
+                    }
+                  }}
                   variant="outline"
                   className="border-blue-600 text-blue-600 hover:bg-blue-50 font-light px-6 py-3 h-auto bg-transparent glass-button-royal hover-lift-3d"
                 >

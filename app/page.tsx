@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,30 +11,46 @@ import {
   Smartphone,
   Shield,
 } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function HomePage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleGetInTouch = () => {
-    if (typeof window !== "undefined") {
-      window.open(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
-      );
-    }
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
+    );
   };
 
   const handleScheduleMeeting = () => {
-    if (typeof window !== "undefined") {
-      window.open(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
-      );
-    }
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
+    );
   };
 
   const handleContactUsToday = () => {
-    if (typeof window !== "undefined") {
-      window.open(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
-      );
-    }
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdUIDrbJl6QEd-8cddPO3P2wa_717ivmuUWN38KAcyeZ9raug/viewform?usp=header"
+    );
   };
 
   const services = [
@@ -71,7 +89,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-32 px-6 hero-section-3d overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative py-32 px-6 hero-section-3d overflow-hidden"
+      >
         <div className="absolute inset-0">
           <div className="hero-3d-sphere"></div>
           <div className="hero-particles">
@@ -118,7 +139,10 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white">
+      <section
+        ref={servicesRef}
+        className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll fade-up">
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
@@ -183,21 +207,17 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  onClick={() => {
-                    if (typeof window !== "undefined") {
-                      window.open("https://www.pakprintwishes.com", "_blank");
-                    }
-                  }}
+                  onClick={() =>
+                    window.open("https://www.pakprintwishes.com", "_blank")
+                  }
                   className="bg-blue-600 hover:bg-blue-700 text-white font-light px-6 py-3 h-auto button-glow-royal hover-lift-3d"
                 >
                   Visit PakPrint Wishes
                 </Button>
                 <Button
-                  onClick={() => {
-                    if (typeof window !== "undefined") {
-                      window.open("https://www.pakprintwishes.com", "_blank");
-                    }
-                  }}
+                  onClick={() =>
+                    window.open("https://www.pakprintwishes.com", "_blank")
+                  }
                   variant="outline"
                   className="border-blue-600 text-blue-600 hover:bg-blue-50 font-light px-6 py-3 h-auto bg-transparent glass-button-royal hover-lift-3d"
                 >
@@ -280,6 +300,7 @@ export default function HomePage() {
       </section>
 
       {/* Founders */}
+      {/* Founders */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-16 animate-on-scroll fade-up">
@@ -304,8 +325,18 @@ export default function HomePage() {
               </h3>
               <div className="founder-title-line"></div>
               <p className="text-blue-600 font-light text-xl mt-3">
-                Managing Director
+                MD (Managing Director)
               </p>
+            </div>
+            <div
+              className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d"
+              style={{ animationDelay: "400ms" }}
+            >
+              <h3 className="text-4xl font-light text-gray-900 mb-3">
+                Hussain Anwar
+              </h3>
+              <div className="founder-title-line"></div>
+              <p className="text-blue-600 font-light text-xl mt-3">Director</p>
             </div>
           </div>
         </div>
@@ -332,23 +363,11 @@ export default function HomePage() {
               style={{ animationDelay: "200ms" }}
             >
               <h3 className="text-4xl font-light text-gray-900 mb-3">
-                M. Shahid Farooq
+                Sardar Shahid Khan
               </h3>
               <div className="founder-title-line"></div>
               <p className="text-blue-600 font-light text-xl mt-3">
                 (CMO) Chief Marketing Officer
-              </p>
-            </div>
-            <div
-              className="text-center animate-on-scroll slide-up founder-card-enhanced hover-lift-3d"
-              style={{ animationDelay: "400ms" }}
-            >
-              <h3 className="text-4xl font-light text-gray-900 mb-3">
-                Hussain Anwar
-              </h3>
-              <div className="founder-title-line"></div>
-              <p className="text-blue-600 font-light text-xl mt-3">
-                (COO) Chief Operation Officer
               </p>
             </div>
           </div>

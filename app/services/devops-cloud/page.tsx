@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Cloud } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Cloud } from "lucide-react";
 
 export const metadata = {
   title: "DevOps & Cloud Solutions - SmartCreatex.tech",
   description:
     "Professional DevOps and cloud services including CI/CD pipelines, AWS & Azure cloud solutions, and scalable infrastructure management.",
-}
+};
 
 export default function DevOpsCloudPage() {
   return (
@@ -45,7 +45,7 @@ export default function DevOpsCloudPage() {
         "Grafana",
         "ELK Stack",
       ]}
-      icon={Cloud}
+      icon={<Cloud className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

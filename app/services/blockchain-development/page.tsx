@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Link } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Link } from "lucide-react";
 
 export const metadata = {
   title: "Blockchain Development - SmartCreatex.tech",
   description:
     "Professional blockchain development services including smart contracts, crypto applications, and decentralized solutions.",
-}
+};
 
 export default function BlockchainDevelopmentPage() {
   return (
@@ -44,7 +44,7 @@ export default function BlockchainDevelopmentPage() {
         "MetaMask",
         "IPFS",
       ]}
-      icon={Link}
+      icon={<Link className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Settings } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Settings } from "lucide-react";
 
 export const metadata = {
   title: "Software & SaaS Development - SmartCreatex.tech",
   description:
     "Custom software and SaaS development services including enterprise software, SaaS solutions, and automation tools.",
-}
+};
 
 export default function SoftwareSaaSDevelopmentPage() {
   return (
@@ -47,7 +47,7 @@ export default function SoftwareSaaSDevelopmentPage() {
         "Stripe",
         "Auth0",
       ]}
-      icon={Settings}
+      icon={<Settings className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

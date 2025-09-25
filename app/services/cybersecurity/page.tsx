@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Shield } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Shield } from "lucide-react";
 
 export const metadata = {
   title: "Cybersecurity Services - SmartCreatex.tech",
   description:
     "Comprehensive cybersecurity services including vulnerability assessment, penetration testing, and threat mitigation solutions.",
-}
+};
 
 export default function CybersecurityPage() {
   return (
@@ -44,7 +44,7 @@ export default function CybersecurityPage() {
         "Palo Alto",
         "Fortinet",
       ]}
-      icon={Shield}
+      icon={<Shield className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

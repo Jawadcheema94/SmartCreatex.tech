@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Globe } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Globe } from "lucide-react";
 
 export const metadata = {
   title: "Web Application Development - SmartCreatex.tech",
   description:
     "Professional web application development services creating secure, dynamic, and scalable web applications for businesses.",
-}
+};
 
 export default function WebApplicationDevelopmentPage() {
   return (
@@ -45,7 +45,7 @@ export default function WebApplicationDevelopmentPage() {
         "GraphQL",
         "REST APIs",
       ]}
-      icon={Globe}
+      icon={<Globe className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

@@ -300,7 +300,6 @@ export default function HomePage() {
       </section>
 
       {/* Founders */}
-      {/* Founders */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-16 animate-on-scroll fade-up">

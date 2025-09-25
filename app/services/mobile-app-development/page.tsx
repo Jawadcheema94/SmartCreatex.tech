@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Smartphone } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Smartphone } from "lucide-react";
 
 export const metadata = {
   title: "Mobile App Development Services - SmartCreatex.tech",
   description:
     "Professional mobile app development services using Flutter, iOS, Android apps, cross-platform solutions with intuitive UI/UX design.",
-}
+};
 
 export default function MobileAppDevelopmentPage() {
   return (
@@ -44,7 +44,7 @@ export default function MobileAppDevelopmentPage() {
         "REST APIs",
         "GraphQL",
       ]}
-      icon={Smartphone}
+      icon={<Smartphone className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

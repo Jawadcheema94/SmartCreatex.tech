@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Code } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Code } from "lucide-react";
 
 export const metadata = {
   title: "Website Development Services - SmartCreatex.tech",
   description:
     "Professional website development services including custom websites, CMS, e-commerce, SEO-friendly, and responsive design solutions.",
-}
+};
 
 export default function WebsiteDevelopmentPage() {
   return (
@@ -46,7 +46,7 @@ export default function WebsiteDevelopmentPage() {
         "PHP",
         "Node.js",
       ]}
-      icon={Code}
+      icon={<Code className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Brain } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Brain } from "lucide-react";
 
 export const metadata = {
   title: "AI & Machine Learning Services - SmartCreatex.tech",
   description:
     "Advanced AI and machine learning solutions including predictive analytics, AI automation, chatbots, and intelligent business solutions.",
-}
+};
 
 export default function AIMachineLearningPage() {
   return (
@@ -45,7 +45,7 @@ export default function AIMachineLearningPage() {
         "Jupyter",
         "MLflow",
       ]}
-      icon={Brain}
+      icon={<Brain className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

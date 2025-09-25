@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { ShoppingCart } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { ShoppingCart } from "lucide-react";
 
 export const metadata = {
   title: "E-commerce Solutions - SmartCreatex.tech",
   description:
     "Professional e-commerce development services including online stores, payment gateway integration, and marketplace solutions.",
-}
+};
 
 export default function EcommerceSolutionsPage() {
   return (
@@ -45,7 +45,7 @@ export default function EcommerceSolutionsPage() {
         "Node.js",
         "PHP",
       ]}
-      icon={ShoppingCart}
+      icon={<ShoppingCart className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

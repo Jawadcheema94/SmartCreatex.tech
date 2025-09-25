@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Palette } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Palette } from "lucide-react";
 
 export const metadata = {
   title: "UI/UX Design Services - SmartCreatex.tech",
   description:
     "Professional UI/UX design services creating engaging, user-friendly interfaces for web and mobile applications.",
-}
+};
 
 export default function UIUXDesignPage() {
   return (
@@ -44,7 +44,7 @@ export default function UIUXDesignPage() {
         "Axure",
         "Balsamiq",
       ]}
-      icon={Palette}
+      icon={<Palette className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { Users } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { Users } from "lucide-react";
 
 export const metadata = {
   title: "IT Consulting & Strategy - SmartCreatex.tech",
   description:
     "Professional IT consulting services including digital transformation, IT planning, technology audits, and strategic guidance.",
-}
+};
 
 export default function ITConsultingStrategyPage() {
   return (
@@ -45,7 +45,7 @@ export default function ITConsultingStrategyPage() {
         "AWS",
         "Azure",
       ]}
-      icon={Users}
+      icon={<Users className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }

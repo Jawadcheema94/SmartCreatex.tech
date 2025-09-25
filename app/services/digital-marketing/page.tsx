@@ -1,11 +1,11 @@
-import { ServicePageTemplate } from "@/components/service-page-template"
-import { TrendingUp } from "lucide-react"
+import { ServicePageTemplate } from "@/components/service-page-template";
+import { TrendingUp } from "lucide-react";
 
 export const metadata = {
   title: "Digital Marketing Services - SmartCreatex.tech",
   description:
     "Comprehensive digital marketing services including SEO, PPC, social media campaigns, and content marketing strategies.",
-}
+};
 
 export default function DigitalMarketingPage() {
   return (
@@ -44,7 +44,7 @@ export default function DigitalMarketingPage() {
         "Buffer",
         "Canva",
       ]}
-      icon={TrendingUp}
+      icon={<TrendingUp className="h-10 w-10 text-blue-200" />}
     />
-  )
+  );
 }
